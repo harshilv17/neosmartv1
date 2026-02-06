@@ -1,5 +1,6 @@
 const { corsMiddleware, jsonParser, urlEncodedParser, requestLogger } = require('./common.middleware');
 const { notFoundHandler, errorHandler } = require('./error.middleware');
+const { validateApiKey, validateOrigin, rateLimit } = require('./security.middleware');
 
 module.exports = {
     corsMiddleware,
@@ -7,5 +8,8 @@ module.exports = {
     urlEncodedParser,
     requestLogger,
     notFoundHandler,
-    errorHandler
+    errorHandler,
+    validateApiKey,
+    validateOrigin,
+    rateLimit
 };
